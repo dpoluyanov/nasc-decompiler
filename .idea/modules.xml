@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Decompiler.iml" filepath="$PROJECT_DIR$/.idea/modules/Decompiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Decompiler_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Decompiler_main.iml" group="Decompiler" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Decompiler_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Decompiler_test.iml" group="Decompiler" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/data.iml" group="data" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/data_main.iml" filepath="$PROJECT_DIR$/.idea/modules/data/data_main.iml" group="data" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/data_test.iml" filepath="$PROJECT_DIR$/.idea/modules/data/data_test.iml" group="data" />
+    </modules>
+  </component>
+</project>

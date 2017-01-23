@@ -1,0 +1,777 @@
+SizeofPointer 8
+SharedFactoryVersion 121
+NPCHVersion 182
+NASCVersion 56
+NPCEventHVersion 4
+Debug 0
+
+class 0 goblin : warrior_passive
+handler 9 748	//  MY_DYING
+	variable_begin
+		"always_list"
+		"c1"
+		"code_info"
+		"i0"
+		"i9"
+		"last_attacker"
+		"lparty"
+		"member"
+		"random1_list"
+		"target"
+		"myself"
+		"_choiceN"
+		"_code"
+		"_from_choice"
+	variable_end
+
+	push_event	//  always_list
+	push_const 760			//always_list
+	add
+	push_reg_sp
+	fetch_i			//expr =
+	push_event	//  gg
+	push_const 704			//AllocCodeInfoList
+	add
+	fetch_i			//AllocCodeInfoList
+	func_call 268435468	//  func[AllocCodeInfoList]
+	assign
+	shift_sp -1
+	push_event	//  random1_list
+	push_const 752			//random1_list
+	add
+	push_reg_sp
+	fetch_i			//expr =
+	push_event	//  gg
+	push_const 704			//AllocCodeInfoList
+	add
+	fetch_i			//AllocCodeInfoList
+	func_call 268435468	//  func[AllocCodeInfoList]
+	assign
+	shift_sp -1
+	push_event	//  target
+	push_const 96			//target
+	add
+	push_reg_sp
+	fetch_i			//expr =
+	push_event	//  last_attacker
+	push_const 728			//last_attacker
+	add
+	fetch_i
+	assign
+	shift_sp -1
+	push_event	//  always_list
+	push_const 760			//always_list
+	add
+	fetch_i			//Fetch Base pointer
+	push_const 0			//unary->INTEGER_CONST
+	push_event	//  target
+	push_const 96			//target
+	add
+	fetch_i
+	func_call 318898176	//  func[SetInfo]
+	shift_sp -2
+	shift_sp -1
+L164852
+	push_event	//  gg
+	push_const 704			//IsNull
+	add
+	fetch_i			//IsNull
+	push_event	//  code_info
+	push_const 768			//code_info
+	add
+	push_reg_sp
+	fetch_i			//expr =
+	push_event	//  always_list
+	push_const 760			//always_list
+	add
+	fetch_i			//Fetch pointer
+	func_call 318767105	//  func[Next]
+	assign
+	fetch_i
+	func_call 268501011	//  func[IsNull]
+	shift_sp -1
+	push_const 0			//unary->INTEGER_CONST
+	equal
+	branch_false L164853
+	push_event	//  code_info
+	push_const 768			//code_info
+	add
+	fetch_i			//code
+	push_const 52			//code
+	add
+	fetch_i4
+	push_reg_sp
+	fetch_i			//select_case compare
+	push_const 0			//select_case
+	equal
+	branch_false L164856
+L164855
+	push_event	//  myself
+	push_const 784			//SetCurrentQuestID
+	add
+	fetch_i			//SetCurrentQuestID
+	push_const 264			//unary->INTEGER_CONST
+	func_call 234946673	//  func[SetCurrentQuestID]
+	shift_sp -1
+	shift_sp -1
+	push_event	//  target
+	push_const 96			//target
+	add
+	push_reg_sp
+	fetch_i			//expr =
+	push_event	//  code_info
+	push_const 768			//code_info
+	add
+	fetch_i			//Fetch pointer
+	func_call 301989889	//  func[RandomSelectOne]
+	assign
+	shift_sp -1
+	push_event	//  gg
+	push_const 704			//IsNull
+	add
+	fetch_i			//IsNull
+	push_event	//  target
+	push_const 96			//target
+	add
+	fetch_i
+	func_call 268501011	//  func[IsNull]
+	shift_sp -1
+	push_const 0			//unary->INTEGER_CONST
+	equal
+	push_reg_sp
+	fetch_i			//and list
+	branch_false L164857
+	push_event	//  myself
+	push_const 784			//DistFromMe
+	add
+	fetch_i			//DistFromMe
+	push_event	//  target
+	push_const 96			//target
+	add
+	fetch_i
+	func_call 234946656	//  func[DistFromMe]
+	shift_sp -1
+	push_const 1500			//unary->INTEGER_CONST
+	less_equal
+	and
+L164857
+	branch_false L164859
+L164858
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	push_reg_sp
+	fetch_i			//expr =
+	push_event	//  myself
+	push_const 784			//GetLastAttacker
+	add
+	fetch_i			//GetLastAttacker
+	func_call 234881166	//  func[GetLastAttacker]
+	assign
+	shift_sp -1
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i			//master
+	push_const 7448			//master
+	add
+	fetch_i
+	branch_false L164861
+L164860
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	push_reg_sp
+	fetch_i			//expr =
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i			//master
+	push_const 7448			//master
+	add
+	fetch_i
+	assign
+	shift_sp -1
+L164861
+	push_event	//  gg
+	push_const 704			//OwnItemCount
+	add
+	fetch_i			//OwnItemCount
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	func_call 268566578	//  func[OwnItemCount]
+	shift_sp -2
+	push_const 50			//unary->INTEGER_CONST
+	less
+	push_reg_sp
+	fetch_i			//and list
+	branch_false L164862
+	push_event	//  gg
+	push_const 704			//HaveMemo
+	add
+	fetch_i			//HaveMemo
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	func_call 268566580	//  func[HaveMemo]
+	shift_sp -2
+	and
+L164862
+	branch_false L164864
+L164863
+	push_event	//  i0
+	push_const 280			//i0
+	add
+	push_reg_sp
+	fetch_i			//expr =
+	push_event	//  gg
+	push_const 704			//Rand
+	add
+	fetch_i			//Rand
+	push_const 20			//unary->INTEGER_CONST
+	func_call 268500999	//  func[Rand]
+	shift_sp -1
+	assign
+	shift_sp -1
+	push_event	//  i0
+	push_const 280			//i0
+	add
+	fetch_i
+	push_const 5			//unary->INTEGER_CONST
+	less
+	branch_false L164866
+L164865
+	push_event	//  gg
+	push_const 704			//OwnItemCount
+	add
+	fetch_i			//OwnItemCount
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	func_call 268566578	//  func[OwnItemCount]
+	shift_sp -2
+	push_const 49			//unary->INTEGER_CONST
+	greater_equal
+	branch_false L164868
+L164867
+	push_event	//  myself
+	push_const 784			//GiveItem1
+	add
+	fetch_i			//GiveItem1
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	push_const 1			//unary->INTEGER_CONST
+	func_call 235077769	//  func[GiveItem1]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SetFlagJournal
+	add
+	fetch_i			//SetFlagJournal
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	push_const 2			//unary->INTEGER_CONST
+	func_call 235077743	//  func[SetFlagJournal]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//ShowQuestMark
+	add
+	fetch_i			//ShowQuestMark
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	func_call 235012493	//  func[ShowQuestMark]
+	shift_sp -2
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SoundEffect
+	add
+	fetch_i			//SoundEffect
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+S22456.	"ItemSound.quest_middle"
+	push_string S22456
+	func_call 235012350	//  func[SoundEffect]
+	shift_sp -2
+	shift_sp -1
+	jump L164869
+L164868
+	push_event	//  gg
+	push_const 704			//OwnItemCount
+	add
+	fetch_i			//OwnItemCount
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	func_call 268566578	//  func[OwnItemCount]
+	shift_sp -2
+	push_const 48			//unary->INTEGER_CONST
+	equal
+	branch_false L164871
+L164870
+	push_event	//  myself
+	push_const 784			//GiveItem1
+	add
+	fetch_i			//GiveItem1
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	push_const 2			//unary->INTEGER_CONST
+	func_call 235077769	//  func[GiveItem1]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SetFlagJournal
+	add
+	fetch_i			//SetFlagJournal
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	push_const 2			//unary->INTEGER_CONST
+	func_call 235077743	//  func[SetFlagJournal]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//ShowQuestMark
+	add
+	fetch_i			//ShowQuestMark
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	func_call 235012493	//  func[ShowQuestMark]
+	shift_sp -2
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SoundEffect
+	add
+	fetch_i			//SoundEffect
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+S22457.	"ItemSound.quest_middle"
+	push_string S22457
+	func_call 235012350	//  func[SoundEffect]
+	shift_sp -2
+	shift_sp -1
+	jump L164872
+L164871
+	push_event	//  myself
+	push_const 784			//GiveItem1
+	add
+	fetch_i			//GiveItem1
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	push_const 2			//unary->INTEGER_CONST
+	func_call 235077769	//  func[GiveItem1]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SoundEffect
+	add
+	fetch_i			//SoundEffect
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+S22458.	"ItemSound.quest_itemget"
+	push_string S22458
+	func_call 235012350	//  func[SoundEffect]
+	shift_sp -2
+	shift_sp -1
+L164872
+L164869
+	jump L164873
+L164866
+	push_event	//  i0
+	push_const 280			//i0
+	add
+	fetch_i
+	push_const 10			//unary->INTEGER_CONST
+	less
+	branch_false L164875
+L164874
+	push_event	//  gg
+	push_const 704			//OwnItemCount
+	add
+	fetch_i			//OwnItemCount
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	func_call 268566578	//  func[OwnItemCount]
+	shift_sp -2
+	push_const 46			//unary->INTEGER_CONST
+	equal
+	branch_false L164877
+L164876
+	push_event	//  myself
+	push_const 784			//GiveItem1
+	add
+	fetch_i			//GiveItem1
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	push_const 4			//unary->INTEGER_CONST
+	func_call 235077769	//  func[GiveItem1]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SetFlagJournal
+	add
+	fetch_i			//SetFlagJournal
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	push_const 2			//unary->INTEGER_CONST
+	func_call 235077743	//  func[SetFlagJournal]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//ShowQuestMark
+	add
+	fetch_i			//ShowQuestMark
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	func_call 235012493	//  func[ShowQuestMark]
+	shift_sp -2
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SoundEffect
+	add
+	fetch_i			//SoundEffect
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+S22459.	"ItemSound.quest_middle"
+	push_string S22459
+	func_call 235012350	//  func[SoundEffect]
+	shift_sp -2
+	shift_sp -1
+	jump L164878
+L164877
+	push_event	//  gg
+	push_const 704			//OwnItemCount
+	add
+	fetch_i			//OwnItemCount
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	func_call 268566578	//  func[OwnItemCount]
+	shift_sp -2
+	push_const 47			//unary->INTEGER_CONST
+	equal
+	branch_false L164880
+L164879
+	push_event	//  myself
+	push_const 784			//GiveItem1
+	add
+	fetch_i			//GiveItem1
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	push_const 3			//unary->INTEGER_CONST
+	func_call 235077769	//  func[GiveItem1]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SetFlagJournal
+	add
+	fetch_i			//SetFlagJournal
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	push_const 2			//unary->INTEGER_CONST
+	func_call 235077743	//  func[SetFlagJournal]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//ShowQuestMark
+	add
+	fetch_i			//ShowQuestMark
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	func_call 235012493	//  func[ShowQuestMark]
+	shift_sp -2
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SoundEffect
+	add
+	fetch_i			//SoundEffect
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+S22460.	"ItemSound.quest_middle"
+	push_string S22460
+	func_call 235012350	//  func[SoundEffect]
+	shift_sp -2
+	shift_sp -1
+	jump L164881
+L164880
+	push_event	//  gg
+	push_const 704			//OwnItemCount
+	add
+	fetch_i			//OwnItemCount
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	func_call 268566578	//  func[OwnItemCount]
+	shift_sp -2
+	push_const 48			//unary->INTEGER_CONST
+	equal
+	branch_false L164883
+L164882
+	push_event	//  myself
+	push_const 784			//GiveItem1
+	add
+	fetch_i			//GiveItem1
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	push_const 2			//unary->INTEGER_CONST
+	func_call 235077769	//  func[GiveItem1]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SetFlagJournal
+	add
+	fetch_i			//SetFlagJournal
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	push_const 2			//unary->INTEGER_CONST
+	func_call 235077743	//  func[SetFlagJournal]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//ShowQuestMark
+	add
+	fetch_i			//ShowQuestMark
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	func_call 235012493	//  func[ShowQuestMark]
+	shift_sp -2
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SoundEffect
+	add
+	fetch_i			//SoundEffect
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+S22461.	"ItemSound.quest_middle"
+	push_string S22461
+	func_call 235012350	//  func[SoundEffect]
+	shift_sp -2
+	shift_sp -1
+	jump L164884
+L164883
+	push_event	//  gg
+	push_const 704			//OwnItemCount
+	add
+	fetch_i			//OwnItemCount
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	func_call 268566578	//  func[OwnItemCount]
+	shift_sp -2
+	push_const 49			//unary->INTEGER_CONST
+	equal
+	branch_false L164886
+L164885
+	push_event	//  myself
+	push_const 784			//GiveItem1
+	add
+	fetch_i			//GiveItem1
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	push_const 1			//unary->INTEGER_CONST
+	func_call 235077769	//  func[GiveItem1]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SetFlagJournal
+	add
+	fetch_i			//SetFlagJournal
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	push_const 2			//unary->INTEGER_CONST
+	func_call 235077743	//  func[SetFlagJournal]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//ShowQuestMark
+	add
+	fetch_i			//ShowQuestMark
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 264			//unary->INTEGER_CONST
+	func_call 235012493	//  func[ShowQuestMark]
+	shift_sp -2
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SoundEffect
+	add
+	fetch_i			//SoundEffect
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+S22462.	"ItemSound.quest_middle"
+	push_string S22462
+	func_call 235012350	//  func[SoundEffect]
+	shift_sp -2
+	shift_sp -1
+	jump L164887
+L164886
+	push_event	//  myself
+	push_const 784			//GiveItem1
+	add
+	fetch_i			//GiveItem1
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+	push_const 1367			//unary->INTEGER_CONST
+	push_const 8			//unary->INTEGER_CONST
+	func_call 235077769	//  func[GiveItem1]
+	shift_sp -3
+	shift_sp -1
+	push_event	//  myself
+	push_const 784			//SoundEffect
+	add
+	fetch_i			//SoundEffect
+	push_event	//  c1
+	push_const 424			//c1
+	add
+	fetch_i
+S22463.	"ItemSound.quest_itemget"
+	push_string S22463
+	func_call 235012350	//  func[SoundEffect]
+	shift_sp -2
+	shift_sp -1
+L164887
+L164884
+L164881
+L164878
+L164875
+L164873
+L164864
+L164859
+	jump L164854
+	jump L164888
+L164856
+L164888
+L164854
+	shift_sp -1
+	jump L164852
+L164853
+	push_event	//  code_info
+	push_const 768			//code_info
+	add
+	push_reg_sp
+	fetch_i			//expr =
+	push_event	//  random1_list
+	push_const 752			//random1_list
+	add
+	fetch_i			//Fetch pointer
+	func_call 318767106	//  func[RandomSelectOne]
+	assign
+	shift_sp -1
+	push_event	//  gg
+	push_const 704			//IsNull
+	add
+	fetch_i			//IsNull
+	push_event	//  code_info
+	push_const 768			//code_info
+	add
+	fetch_i
+	func_call 268501011	//  func[IsNull]
+	shift_sp -1
+	push_const 0			//unary->INTEGER_CONST
+	equal
+	branch_false L164890
+L164889
+	push_event	//  code_info
+	push_const 768			//code_info
+	add
+	fetch_i			//code
+	push_const 52			//code
+	add
+	fetch_i4
+L164892
+L164891
+	shift_sp -1
+L164890
+	call_super
+handler_end
+
+class_end
